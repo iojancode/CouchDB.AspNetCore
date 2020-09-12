@@ -98,7 +98,7 @@ namespace CouchDB.AspNetCore.SignalR
             if (_couch == null) return;
             try 
             {
-                await _couch.Upsert(message);
+                await _couch.Insert(message);
             } 
             catch (Exception ex) { _logger.LogError(ex, "Failure sending broadcast"); }
         }

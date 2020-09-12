@@ -46,7 +46,7 @@ namespace CouchDB.AspNetCore.Idempotent
         {
             try
             {
-                await _couch.Upsert(new Idempotent { Id = idempotentKey, Result = result });
+                await _couch.Insert(new Idempotent { Id = idempotentKey, Result = result });
             }
             catch (Exception ex) 
             { 

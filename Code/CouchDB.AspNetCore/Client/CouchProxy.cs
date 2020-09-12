@@ -40,10 +40,10 @@ namespace CouchDB.AspNetCore.Client
             return result.Content;
         }
 
-        public async Task Upsert<T>(T entity) where T : class
+        public async Task Insert<T>(T entity) where T : class
         {
-            var result = await _client.Entities.PutAsync(entity);
-            if (!result.IsSuccess) throw new CouchProxyException($"Upsert failure: {result.Reason}");
+            var result = await _client.Entities.PostAsync(entity);
+            if (!result.IsSuccess) throw new CouchProxyException($"Insert failure: {result.Reason}");
         }
         
         public async Task<List<T>> QueryView<T>(string viewName, object key = null, bool descending = false, int limit = 100, int page = 0) where T : class

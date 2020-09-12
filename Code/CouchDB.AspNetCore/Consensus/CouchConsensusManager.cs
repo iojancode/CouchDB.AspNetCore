@@ -31,7 +31,7 @@ namespace CouchDB.AspNetCore.Consensus
                 var found = await _couch.GetById<Assignment>(assignment);
                 if (found != null) return found.Node == Environment.MachineName;
 
-                await _couch.Upsert(new Assignment { Id = assignment, Node = Environment.MachineName });
+                await _couch.Insert(new Assignment { Id = assignment, Node = Environment.MachineName });
                 return true;
             } 
             catch (Exception ex) 

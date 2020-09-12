@@ -27,19 +27,19 @@ namespace CouchDB.AspNetCore.Protect
 
         private async Task<IList<XElement>> GetAllElementsAsync()
         {
-            var result = await _couch.QueryView<string>("_all_docs");
-            return result.Select(json => JsonConvert.DeserializeXNode(json).Root).ToList();
+            var result = await _couch.QueryView<ProtectedKey>("_all_docs");
+            return result.Select(pk => XElement.Parse(pk.Data)).ToList();
         }
 
         public void StoreElement(XElement element, string friendlyName)
         {
-            Task.Run(() => StoreElementAsync(element)).GetAwaiter().GetResult();
+            Task.Run(() => StoreElementAsync(element, friendlyName)).GetAwaiter().GetResult();
         }
 
-        private async Task StoreElementAsync(XElement element)
+        private async Task StoreElementAsync(XElement element, string friendlyName)
         {
-            string json = JsonConvert.SerializeXNode(element);
-            await _couch.Upsert<string>(json);
+            var data = new ProtectedKey { Id = friendlyName, Data = element.ToString() };
+            await _couch.Insert(data);
         }
     }
 }
