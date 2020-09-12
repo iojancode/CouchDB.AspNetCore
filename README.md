@@ -1,6 +1,6 @@
 # CouchDB.AspNetCore #
 
-Because everything in AspNet Core can be backed by CouchDB, i don't mean you should.
+AspNet Core extension services backed by CouchDB.
 
 Configure at your Startup.cs:
 

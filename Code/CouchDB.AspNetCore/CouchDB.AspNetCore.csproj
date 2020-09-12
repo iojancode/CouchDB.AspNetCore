@@ -2,7 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Description>AspNet Core extension services backed by CouchDB</Description>
     <PackageId>CouchDB.AspNetCore</PackageId>
+    <PackageTags>couchdb;aspnetcore;dataprotection;signalr;idempotent;consensus</PackageTags>
+    <RepositoryUrl>https://github.com/iojancode/CouchDB.AspNetCore</RepositoryUrl>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <Version>1.0.0</Version>
   </PropertyGroup>
 
