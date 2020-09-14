@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Description>AspNet Core extension services backed by CouchDB</Description>
+    <Description>AspNet Core extension services backed by CouchDB: data protection keys out of the box, SignalR backplane out of the box, REST API idepotency attribute decorator and lidership consensus injection</Description>
     <PackageId>CouchDB.AspNetCore</PackageId>
     <PackageTags>couchdb;aspnetcore;dataprotection;signalr;idempotent;consensus</PackageTags>
     <RepositoryUrl>https://github.com/iojancode/CouchDB.AspNetCore</RepositoryUrl>
