@@ -1,6 +1,6 @@
 # CouchDB.AspNetCore #
 
-AspNet Core extension services backed by CouchDB.
+AspNet Core extension services backed by CouchDB: data protection keys out of the box, SignalR backplane out of the box, REST API idepotency attribute decorator and lidership consensus injection.
 
 Configure at your Startup.cs:
 
@@ -47,3 +47,5 @@ public async Task DoWork()
     if (leader) { /* important work if today this node is the leader of your cluster */ }
 }
 ```
+
+[![Nuget](https://img.shields.io/nuget/v/couchdb.aspnetcore.svg)](https://www.nuget.org/packages/CouchDB.AspNetCore/)
